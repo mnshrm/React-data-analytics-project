@@ -1,5 +1,3 @@
-import { ColorModeContext, useMode } from "./theme";
-import { CssBaseline, ThemeProvider } from "@mui/material";
 import Topbar from "./Scenes/global/Topbar";
 import Sidebar from "./Scenes/global/Sidebar";
 import Dashboard from "./Scenes/Dashboard/Dashboard";
@@ -12,21 +10,35 @@ import Pie from "./Scenes/Pie/Pie";
 import Team from "./Scenes/Team/Team";
 import Contacts from "./Scenes/Contacts/Contacts";
 import Bar from "./Scenes/Bar/Bar";
+import Root from "./Scenes/RootLayout/Root";
+import Error from "./Scenes/ErrorLayout/Error";
+import { ColorModeContext, useMode } from "./theme";
+import { ThemeProvider, CssBaseline } from "@mui/material";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    errorElement: <Error />,
+    element: <Root />,
+    children: [
+      {
+        path: "/dashboard",
+        element: <Dashboard />,
+      },
+    ],
+  },
+]);
 
 function App() {
   const [theme, colorMode] = useMode();
 
   return (
     <ColorModeContext.Provider value={colorMode}>
-      <Sidebar />
       <ThemeProvider theme={theme}>
         {/* CssBaseline to reset CSS to default */}
         <CssBaseline />
-        <div className="app">
-          <main className="content">
-            <Topbar />
-          </main>
-        </div>
+        <RouterProvider router={router} />
       </ThemeProvider>
     </ColorModeContext.Provider>
   );
