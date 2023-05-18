@@ -1,7 +1,11 @@
 import { createContext, useState, useMemo } from "react";
 import { createTheme } from "@mui/material";
 
-// mode here is dark or light mode
+/**
+ * @description This method returns color palette for the mode provided
+ * @param {String} mode
+ * @returns Color pallete
+ */
 export const tokens = (mode) => ({
   ...(mode === "dark"
     ? {
@@ -126,7 +130,11 @@ export const tokens = (mode) => ({
       }),
 });
 
-// MUI theme settings
+/**
+ * @description Returns MUI theme settings based on the mode provided
+ * @param {String} mode
+ * @returns {Obj} MUI theme settings
+ */
 export const themeSettings = (mode) => {
   const colors = tokens(mode);
   return {
@@ -199,21 +207,27 @@ export const themeSettings = (mode) => {
   };
 };
 
-// Create react context for color mode (Light or Dark)
+/**
+ * Web app theme context
+ */
 export const ColorModeContext = createContext({
   toggleColorMode: () => {},
 });
 
+/**
+ * @description Custom hook useMode manages light and dark theme of web app
+ * @returns {Array} theme and colorMode
+ */
 export const useMode = () => {
   const [mode, setMode] = useState("dark");
-  const colorMode = useMemo(
-    () => ({
+  const colorMode = useMemo(() => {
+    console.log("Inside color mode toggler");
+    return {
       toggleColorMode: () => {
         setMode((prev) => (prev === "light" ? "dark" : "light"));
       },
-    }),
-    []
-  );
+    };
+  }, []);
 
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
 
