@@ -1,5 +1,3 @@
-import Topbar from "./Scenes/global/Topbar";
-import Sidebar from "./Scenes/global/Sidebar";
 import Dashboard from "./Scenes/Dashboard/Dashboard";
 import FAQ from "./Scenes/FAQ/FAQ";
 import Form from "./Scenes/Form/Form";
@@ -12,6 +10,7 @@ import Contacts from "./Scenes/Contacts/Contacts";
 import Bar from "./Scenes/Bar/Bar";
 import Root from "./Scenes/RootLayout/Root";
 import Error from "./Scenes/ErrorLayout/Error";
+import Calendar from "./Scenes/Calendar/Calendar";
 import { ColorModeContext, useMode } from "./theme";
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
@@ -25,6 +24,46 @@ const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <Dashboard />,
+      },
+      {
+        path: "/faq",
+        element: <FAQ />,
+      },
+      {
+        path: "/form",
+        element: <Form />,
+      },
+      {
+        path: "/geography",
+        element: <Geography />,
+      },
+      {
+        path: "/invoices",
+        element: <Invoices />,
+      },
+      {
+        path: "/line",
+        element: <Line />,
+      },
+      {
+        path: "/pie",
+        element: <Pie />,
+      },
+      {
+        path: "/team",
+        element: <Team />,
+      },
+      {
+        path: "/contacts",
+        element: <Contacts />,
+      },
+      {
+        path: "/bar",
+        element: <Bar />,
+      },
+      {
+        path: "/calendar",
+        element: <Calendar />,
       },
     ],
   },
