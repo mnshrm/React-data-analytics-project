@@ -8,9 +8,13 @@ import {
   NotificationsOutlined,
   PersonOutline,
   SettingsOutlined,
+  Menu,
 } from "@mui/icons-material";
 
-const Topbar = () => {
+const Topbar = (props) => {
+  // handleOpen changes open state present in Root.jsx
+  // open state collapses and uncollapses sidebar
+  const { handleOpen } = props;
   const theme = useTheme();
   const color = tokens(theme.palette.mode);
   const colorMode = useContext(ColorModeContext);
@@ -22,6 +26,9 @@ const Topbar = () => {
         backgroundColor={color.primary[400]}
         borderRadius={"3px"}
       >
+        <IconButton>
+          <Menu onClick={handleOpen} />
+        </IconButton>
         <InputBase sx={{ ml: 2, flex: 1 }} placeholder="Search" />
         <IconButton>
           <SearchIcon />
@@ -51,4 +58,4 @@ const Topbar = () => {
   );
 };
 
-export default Topbar;
+export default React.memo(Topbar);
