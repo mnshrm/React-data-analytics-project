@@ -35,31 +35,17 @@ const options = [
       {
         subTitle: "Manage Team",
         icon: <PeopleOutlinedIcon />,
+        to: "/team",
       },
       {
         subTitle: "Contacts Information",
         icon: <ContactsOutlinedIcon />,
+        to: "/contacts",
       },
       {
         subTitle: "Invoices Balances",
         icon: <ReceiptOutlinedIcon />,
-      },
-    ],
-  },
-  {
-    title: "Pages",
-    subOptions: [
-      {
-        subTitle: "Profile Form",
-        icon: <PersonOutlinedIcon />,
-      },
-      {
-        subTitle: "Calendar",
-        icon: <CalendarTodayOutlinedIcon />,
-      },
-      {
-        subTitle: "FAQ Page",
-        icon: <HelpOutlineOutlinedIcon />,
+        to: "/invoices",
       },
     ],
   },
@@ -69,18 +55,42 @@ const options = [
       {
         subTitle: "Bar Chart",
         icon: <BarChartOutlinedIcon />,
+        to: "/bar",
       },
       {
         subTitle: "Pie Chart",
         icon: <PieChartOutline />,
+        to: "/pie",
       },
       {
         subTitle: "Line Chart",
         icon: <TimelineOutlinedIcon />,
+        to: "/line",
       },
       {
         subTitle: "Geography Chart",
         icon: <MapOutlinedIcon />,
+        to: "/geography",
+      },
+    ],
+  },
+  {
+    title: "Pages",
+    subOptions: [
+      {
+        subTitle: "Profile Form",
+        icon: <PersonOutlinedIcon />,
+        to: "/profile",
+      },
+      {
+        subTitle: "Calendar",
+        icon: <CalendarTodayOutlinedIcon />,
+        to: "/calendar",
+      },
+      {
+        subTitle: "FAQ Page",
+        icon: <HelpOutlineOutlinedIcon />,
+        to: "/faq",
       },
     ],
   },
@@ -144,7 +154,7 @@ const Sidebar = (props) => {
                       <ListItemButton
                         sx={{ marginLeft: "10px" }}
                         component={Link}
-                        to="/bar"
+                        to={subOpt.to}
                       >
                         <ListItemIcon>{subOpt.icon}</ListItemIcon>
                         <ListItemText primary={subOpt.subTitle} />

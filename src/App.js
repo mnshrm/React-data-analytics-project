@@ -25,46 +25,50 @@ const router = createBrowserRouter([
         path: "/dashboard",
         element: <Dashboard />,
       },
+      // ************
       {
-        path: "/faq",
-        element: <FAQ />,
-      },
-      {
-        path: "/form",
-        element: <Form />,
-      },
-      {
-        path: "/geography",
-        element: <Geography />,
+        path: "/team",
+        element: <Team />,
       },
       {
         path: "/invoices",
         element: <Invoices />,
       },
       {
-        path: "/line",
-        element: <Line />,
+        path: "/contacts",
+        element: <Contacts />,
+      },
+      // ************
+      {
+        path: "/bar",
+        element: <Bar />,
       },
       {
         path: "/pie",
         element: <Pie />,
       },
       {
-        path: "/team",
-        element: <Team />,
+        path: "/line",
+        element: <Line />,
       },
       {
-        path: "/contacts",
-        element: <Contacts />,
+        path: "/geography",
+        element: <Geography />,
       },
+      // ************
       {
-        path: "/bar",
-        element: <Bar />,
+        path: "/form",
+        element: <Form />,
       },
       {
         path: "/calendar",
         element: <Calendar />,
       },
+      {
+        path: "/faq",
+        element: <FAQ />,
+      },
+      // ************
     ],
   },
 ]);
