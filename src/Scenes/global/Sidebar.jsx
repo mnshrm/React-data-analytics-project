@@ -23,7 +23,7 @@ import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
-import { PieChartOutline } from "@mui/icons-material";
+import { Dashboard, PieChartOutline } from "@mui/icons-material";
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 import { ChevronLeft } from "@mui/icons-material";
@@ -108,7 +108,7 @@ const Sidebar = (props) => {
   const [selectedOption, setSelectedOption] = useState("");
   // toggleOption to change selectedOption
   const toggleOption = useCallback((opt) => {
-    setSelectedOption(opt);
+    setSelectedOption((pv) => (pv === opt ? "" : opt));
   }, []);
 
   return (
@@ -132,6 +132,14 @@ const Sidebar = (props) => {
         </Box>
         <Divider />
         <List>
+          <ListItemButton component={Link} to={"/dashboard"}>
+            <ListItemIcon>
+              <Dashboard />
+            </ListItemIcon>
+            <ListItemText primary="Dashboard" />
+          </ListItemButton>
+        </List>
+        <List>
           {options.map((option) => {
             return (
               <>
@@ -139,7 +147,7 @@ const Sidebar = (props) => {
                   <Typography
                     variant="h6"
                     color={color.grey[300]}
-                    sx={{ m: "5px 0 5px 5px" }}
+                    sx={{ m: "5px 0 5px 0px" }}
                   >
                     {option.title}
                   </Typography>
