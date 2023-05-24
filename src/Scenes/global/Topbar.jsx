@@ -26,8 +26,8 @@ const Topbar = (props) => {
         backgroundColor={color.primary[400]}
         borderRadius={"3px"}
       >
-        <IconButton>
-          <Menu onClick={handleOpen} />
+        <IconButton onClick={handleOpen}>
+          <Menu />
         </IconButton>
         <InputBase sx={{ ml: 2, flex: 1 }} placeholder="Search" />
         <IconButton>

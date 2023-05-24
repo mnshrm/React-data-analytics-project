@@ -160,9 +160,10 @@ const Sidebar = (props) => {
                   <List disablePadding>
                     {option.subOptions.map((subOpt) => (
                       <ListItemButton
-                        sx={{ marginLeft: "10px" }}
+                        key={subOpt.to}
                         component={Link}
                         to={subOpt.to}
+                        sx={{ marginLeft: "10px" }}
                       >
                         <ListItemIcon>{subOpt.icon}</ListItemIcon>
                         <ListItemText primary={subOpt.subTitle} />
