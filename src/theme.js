@@ -57,15 +57,15 @@ export const tokens = (mode) => ({
           900: "#2c100f",
         },
         blueAccent: {
-          100: "#e1e2db",
-          200: "#c3c6b7",
-          300: "#a4a992",
-          400: "#868d6e",
-          500: "#68704a",
-          600: "#535a3b",
-          700: "#3e432c",
-          800: "#2a2d1e",
-          900: "#15160f",
+          100: "#e1e2fe",
+          200: "#c3c6fd",
+          300: "#a4a9fc",
+          400: "#868dfb",
+          500: "#6870fa",
+          600: "#535ac8",
+          700: "#3e4396",
+          800: "#2a2d64",
+          900: "#151632",
         },
       }
     : {
@@ -117,15 +117,15 @@ export const tokens = (mode) => ({
           900: "#f8dcdb",
         },
         blueAccent: {
-          100: "#15160f",
-          200: "#2a2d1e",
-          300: "#3e432c",
-          400: "#535a3b",
-          500: "#68704a",
-          600: "#868d6e",
-          700: "#a4a992",
-          800: "#c3c6b7",
-          900: "#e1e2db",
+          100: "#151632",
+          200: "#2a2d64",
+          300: "#3e4396",
+          400: "#535ac8",
+          500: "#6870fa",
+          600: "#868dfb",
+          700: "#a4a9fc",
+          800: "#c3c6fd",
+          900: "#e1e2fe",
         },
       }),
 });
@@ -221,7 +221,6 @@ export const ColorModeContext = createContext({
 export const useMode = () => {
   const [mode, setMode] = useState("dark");
   const colorMode = useMemo(() => {
-    console.log("Inside color mode toggler");
     return {
       toggleColorMode: () => {
         setMode((prev) => (prev === "light" ? "dark" : "light"));
