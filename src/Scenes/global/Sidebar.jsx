@@ -80,7 +80,7 @@ const options = [
       {
         subTitle: "Profile Form",
         icon: <PersonOutlinedIcon />,
-        to: "/profile",
+        to: "/form",
       },
       {
         subTitle: "Calendar",
