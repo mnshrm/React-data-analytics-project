@@ -142,7 +142,7 @@ const Sidebar = (props) => {
         <List>
           {options.map((option) => {
             return (
-              <>
+              <Box key={option.title}>
                 <ListItemButton onClick={toggleOption.bind(null, option.title)}>
                   <Typography
                     variant="h6"
@@ -171,7 +171,7 @@ const Sidebar = (props) => {
                     ))}
                   </List>
                 </Collapse>
-              </>
+              </Box>
             );
           })}
         </List>

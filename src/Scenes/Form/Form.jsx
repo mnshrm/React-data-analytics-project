@@ -24,9 +24,8 @@ const userSchema = yup.object().shape({
 
 const Form = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
-  const handleSubmit = useCallback((e, values) => {
-    e.preventDefault();
-    console.log(handleSubmit);
+  const handleSubmit = useCallback((values) => {
+    console.log(values);
   }, []);
 
   const formik = useFormik({
@@ -48,6 +47,7 @@ const Form = () => {
       <form
         onSubmit={(e) => {
           e.preventDefault();
+          formik.handleSubmit();
         }}
       >
         <Box
@@ -60,7 +60,6 @@ const Form = () => {
         >
           {/* FIRST NAME */}
           <TextField
-            fullwidth
             variant="filled"
             type="text"
             id="firstName"
@@ -77,7 +76,6 @@ const Form = () => {
           />
           {/* LAST NAME */}
           <TextField
-            fullwidth
             variant="filled"
             type="text"
             id="lastName"
@@ -94,7 +92,6 @@ const Form = () => {
           />
           {/* EMAIL */}
           <TextField
-            fullwidth
             variant="filled"
             type="email"
             id="email"
@@ -111,7 +108,6 @@ const Form = () => {
           />
           {/* CONTACT NUMBER */}
           <TextField
-            fullwidth
             variant="filled"
             type="text"
             id="contact"
@@ -128,7 +124,6 @@ const Form = () => {
           />
           {/* ADDRESS LINE 1 */}
           <TextField
-            fullwidth
             variant="filled"
             type="text"
             id="address1"
