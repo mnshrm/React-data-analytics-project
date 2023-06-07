@@ -132,7 +132,7 @@ const Sidebar = (props) => {
         </Box>
         <Divider />
         <List>
-          <ListItemButton component={Link} to={"/dashboard"}>
+          <ListItemButton component={Link} to={"/"}>
             <ListItemIcon>
               <Dashboard />
             </ListItemIcon>
